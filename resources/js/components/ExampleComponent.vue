@@ -6,7 +6,7 @@
                     <div class="card-header">Example Component</div>
 
                     <div class="card-body">
-                        {{ info }}
+                        {{ req }}
                     </div>
                 </div>
             </div>
@@ -18,7 +18,8 @@
     export default {
         data() {
             return {
-                info: null
+                info: null,
+                req: ''
             };
         },
         mounted() {

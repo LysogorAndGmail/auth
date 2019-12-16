@@ -6,7 +6,7 @@
                     <div class="card-header">Example Component</div>
 
                     <div class="card-body">
-                        I'm an example component.
+                        {{ info }}
                     </div>
                 </div>
             </div>
@@ -16,8 +16,15 @@
 
 <script>
     export default {
+        data() {
+            return {
+                info: null
+            };
+        },
         mounted() {
-            console.log('Component mounted.')
+            axios
+                .get('/users')
+                .then(response => (this.info = response));
         }
     }
 </script>

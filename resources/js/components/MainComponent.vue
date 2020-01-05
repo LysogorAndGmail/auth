@@ -3,11 +3,12 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Example Component</div>
+                    <div class="card-header">Main Component</div>
 
                     <div class="card-body">
                         {{ info }}
                     </div>
+                    <Users></Users>
                 </div>
             </div>
         </div>
@@ -15,6 +16,9 @@
 </template>
 
 <script>
+
+    import Users from './users/Users.vue';
+
     export default {
         data() {
             return {
@@ -22,10 +26,13 @@
                 req: ''
             };
         },
+        methods: {
+        },
         mounted() {
-            axios
-                .get('/users')
-                .then(response => (this.info = response));
+            //this.getAllUsers();
+        },
+        components: {
+            Users
         }
     }
 </script>
